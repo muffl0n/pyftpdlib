@@ -462,7 +462,7 @@ class ActiveDTP(Connector):
         source_ip = self.cmd_channel.socket.getsockname()[0]
         # dual stack IPv4/IPv6 support
         try:
-            self.connect_af_unspecified((ip, port), (source_ip, 0))
+            self.connect_af_unspecified((ip, port), (source_ip, 20))
         except (socket.gaierror, socket.error):
             self.handle_close()
 
